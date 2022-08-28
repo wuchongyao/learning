@@ -1,0 +1,38 @@
+#对象1
+classn: 2011-02
+#对象2
+student: 
+ classn: 2011-02
+ name: wcy
+ years: 18
+#对象3
+student1: {classn: 2011-02, name: hff, years: 18} 
+# 对象4 对象的属性是一个数组 [complexkey1,complexkey2]，对应的值也是一个数组 [complexvalue1,complexvalue2]
+# ? 
+#  - student2
+#  - student3
+# : 
+#  - 2011-02
+#  - 2011-03
+# 
+#数组1
+classn1: [A, B, C]
+#数组2
+classn2:
+ - A
+ - B
+ - C
+#纯量
+is not a apple: true
+is not a orange: false
+defaults: &test
+  adapter:  postgres
+  host:     localhost
+
+development:
+  database: myapp_development
+  <<: *test
+
+test:
+  database: myapp_test
+  <<: *test
